@@ -1,6 +1,6 @@
 #include "..\Structures\OurTree.h"
 #include "..\Structures\MyNode and MyList.h"
-// Добавляет узел в конец списка
+// Р”РѕР±Р°РІР»СЏРµС‚ СѓР·РµР» РІ РєРѕРЅРµС† СЃРїРёСЃРєР°
 void MyList::addNode(int value) {
 	OurTree* new_root = new OurTree;
 	new_root->key = value;
@@ -8,18 +8,18 @@ void MyList::addNode(int value) {
 	new_node->root_of_tree = new_root;
 	if (quantity_of_nodes == 0) {
 		head = new_node;
-		cout << "В список был добавлен первый узел\n";
+		cout << "Р’ СЃРїРёСЃРѕРє Р±С‹Р» РґРѕР±Р°РІР»РµРЅ РїРµСЂРІС‹Р№ СѓР·РµР»\n";
 	}
 	else {
 		MyNode* current_node = head;
 		while (current_node->next != nullptr)
 			current_node = current_node->next;
 		current_node->next = new_node;
-		cout << "Был добавлен новый узел в конец списка\n";
+		cout << "Р‘С‹Р» РґРѕР±Р°РІР»РµРЅ РЅРѕРІС‹Р№ СѓР·РµР» РІ РєРѕРЅРµС† СЃРїРёСЃРєР°\n";
 	}
 	++quantity_of_nodes;
 }
-// Вспомогательные функции
+// Р’СЃРїРѕРјРѕРіР°С‚РµР»СЊРЅС‹Рµ С„СѓРЅРєС†РёРё
 int MyList::simplificationOfNumeral(int number) {
 	if (number > 19 && number < 100)
 		return number % 10;
@@ -33,28 +33,28 @@ int MyList::simplificationOfNumeral(int number) {
 string MyList::matchingWordNodeWithNumeral(int number) {
 	number = simplificationOfNumeral(number);
 	if (number == 0 || number > 4)
-		return "узлов";
+		return "СѓР·Р»РѕРІ";
 	if (number == 1)
-		return "узел";
-	return "узла";
+		return "СѓР·РµР»";
+	return "СѓР·Р»Р°";
 }
-// Выводит данные списка и его узлов
+// Р’С‹РІРѕРґРёС‚ РґР°РЅРЅС‹Рµ СЃРїРёСЃРєР° Рё РµРіРѕ СѓР·Р»РѕРІ
 void MyList::showInfo() {
 	if (head == nullptr) {
-		cout << "Список пуст\n";
+		cout << "РЎРїРёСЃРѕРє РїСѓСЃС‚\n";
 		return;
 	}
-	cout << "Головной узел: " << head << endl;
-	cout << "Список хранит в себе " << quantity_of_nodes << matchingWordNodeWithNumeral(quantity_of_nodes) << ":\n";
+	cout << "Р“РѕР»РѕРІРЅРѕР№ СѓР·РµР»: " << head << endl;
+	cout << "РЎРїРёСЃРѕРє С…СЂР°РЅРёС‚ РІ СЃРµР±Рµ " << quantity_of_nodes << matchingWordNodeWithNumeral(quantity_of_nodes) << ":\n";
 	int node_number = 1;
 	MyNode* current_node = head;
 	do {
-		cout << "Номер: " << node_number << ". Адрес текущего узла: " << current_node << ". Идентификатор ключа дерева: " << current_node->root_of_tree->key << ". Адрес следующего узла: " << current_node->next << endl;
+		cout << "РќРѕРјРµСЂ: " << node_number << ". РђРґСЂРµСЃ С‚РµРєСѓС‰РµРіРѕ СѓР·Р»Р°: " << current_node << ". РРґРµРЅС‚РёС„РёРєР°С‚РѕСЂ РєР»СЋС‡Р° РґРµСЂРµРІР°: " << current_node->root_of_tree->key << ". РђРґСЂРµСЃ СЃР»РµРґСѓСЋС‰РµРіРѕ СѓР·Р»Р°: " << current_node->next << endl;
 		current_node = current_node->next;
 		++node_number;
 	} while (current_node != nullptr);
 }
-// Получает адрес узла в списке, используя его порядковый номер
+// РџРѕР»СѓС‡Р°РµС‚ Р°РґСЂРµСЃ СѓР·Р»Р° РІ СЃРїРёСЃРєРµ, РёСЃРїРѕР»СЊР·СѓСЏ РµРіРѕ РїРѕСЂСЏРґРєРѕРІС‹Р№ РЅРѕРјРµСЂ
 MyNode* MyList::getNodeByPosition(int number) {
 	if (head == nullptr)
 		return nullptr;
@@ -68,29 +68,29 @@ MyNode* MyList::getNodeByPosition(int number) {
 		return current_node;
 	}
 }
-// Удаляет узел, используя его порядковый номер в списке
+// РЈРґР°Р»СЏРµС‚ СѓР·РµР», РёСЃРїРѕР»СЊР·СѓСЏ РµРіРѕ РїРѕСЂСЏРґРєРѕРІС‹Р№ РЅРѕРјРµСЂ РІ СЃРїРёСЃРєРµ
 void MyList::deleteNodeByPosition(int number) {
-	// Исключения
+	// РСЃРєР»СЋС‡РµРЅРёСЏ
 	if (quantity_of_nodes == 0) {
-		cout << "Список пуст. Удалять нечего\n";
+		cout << "РЎРїРёСЃРѕРє РїСѓСЃС‚. РЈРґР°Р»СЏС‚СЊ РЅРµС‡РµРіРѕ\n";
 		return;
 	}
 	if (number < 0 || number > quantity_of_nodes) {
-		cout << "Узла под номером " << number << "нет в списке\n";
+		cout << "РЈР·Р»Р° РїРѕРґ РЅРѕРјРµСЂРѕРј " << number << "РЅРµС‚ РІ СЃРїРёСЃРєРµ\n";
 		return;
 	}
-	// Грантированное удаление
+	// Р“СЂР°РЅС‚РёСЂРѕРІР°РЅРЅРѕРµ СѓРґР°Р»РµРЅРёРµ
 	MyNode* current_node = head;
 	if (number == 1) {
 		if (current_node->next == nullptr) {
 			head = nullptr;
 			delete current_node;
-			cout << "Был удалён единственный узел списка\n";
+			cout << "Р‘С‹Р» СѓРґР°Р»С‘РЅ РµРґРёРЅСЃС‚РІРµРЅРЅС‹Р№ СѓР·РµР» СЃРїРёСЃРєР°\n";
 		}
 		else {
 			head = current_node->next;
 			delete current_node;
-			cout << "Был удалён первый узел списка\n";
+			cout << "Р‘С‹Р» СѓРґР°Р»С‘РЅ РїРµСЂРІС‹Р№ СѓР·РµР» СЃРїРёСЃРєР°\n";
 		}
 	}
 	else {
@@ -102,7 +102,7 @@ void MyList::deleteNodeByPosition(int number) {
 		MyNode* targeted_node = current_node->next;
 		current_node->next = targeted_node->next;
 		delete targeted_node;
-		cout << "Был удалён узел из списка под номером " << number << endl;
+		cout << "Р‘С‹Р» СѓРґР°Р»С‘РЅ СѓР·РµР» РёР· СЃРїРёСЃРєР° РїРѕРґ РЅРѕРјРµСЂРѕРј " << number << endl;
 	}
 	--quantity_of_nodes;
 }

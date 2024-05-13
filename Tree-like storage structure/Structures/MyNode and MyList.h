@@ -10,12 +10,12 @@ struct MyNode {
 struct MyList {
 	MyNode* head = nullptr;
 	int quantity_of_nodes = 0;
-	// Методы обработки узлов списка
-	void addNode(int value); // Добавляет узел в конец списка
-	// Вспомогательные функции
+	// РњРµС‚РѕРґС‹ РѕР±СЂР°Р±РѕС‚РєРё СѓР·Р»РѕРІ СЃРїРёСЃРєР°
+	void addNode(int value); // Р”РѕР±Р°РІР»СЏРµС‚ СѓР·РµР» РІ РєРѕРЅРµС† СЃРїРёСЃРєР°
+	// Р’СЃРїРѕРјРѕРіР°С‚РµР»СЊРЅС‹Рµ С„СѓРЅРєС†РёРё
 	int simplificationOfNumeral(int number);
 	string matchingWordNodeWithNumeral(int number);
-	void showInfo(); // Выводит данные списка и его узлов
-	MyNode* getNodeByPosition(int number); // Получает адрес узла в списке, используя его порядковый номер
-	void deleteNodeByPosition(int number); // Удаляет узел, используя его порядковый номер в списке
+	void showInfo(); // Р’С‹РІРѕРґРёС‚ РґР°РЅРЅС‹Рµ СЃРїРёСЃРєР° Рё РµРіРѕ СѓР·Р»РѕРІ
+	MyNode* getNodeByPosition(int number); // РџРѕР»СѓС‡Р°РµС‚ Р°РґСЂРµСЃ СѓР·Р»Р° РІ СЃРїРёСЃРєРµ, РёСЃРїРѕР»СЊР·СѓСЏ РµРіРѕ РїРѕСЂСЏРґРєРѕРІС‹Р№ РЅРѕРјРµСЂ
+	void deleteNodeByPosition(int number); // РЈРґР°Р»СЏРµС‚ СѓР·РµР», РёСЃРїРѕР»СЊР·СѓСЏ РµРіРѕ РїРѕСЂСЏРґРєРѕРІС‹Р№ РЅРѕРјРµСЂ РІ СЃРїРёСЃРєРµ
 };

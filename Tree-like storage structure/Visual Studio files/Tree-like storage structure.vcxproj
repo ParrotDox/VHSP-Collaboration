@@ -129,15 +129,19 @@
   <ItemGroup>
     <ClCompile Include="..\Main.cpp" />
     <ClCompile Include="..\Methods\addLeaf.cpp" />
-    <ClCompile Include="..\Methods\delLeft.cpp" />
-    <ClCompile Include="..\Methods\delRight.cpp" />
+    <ClCompile Include="..\Methods\convertIntNumberToString.cpp" />
     <ClCompile Include="..\Methods\demolishCollapse.cpp" />
     <ClCompile Include="..\Methods\directWay.cpp" />
-    <ClCompile Include="..\Methods\findMin.cpp" />
+    <ClCompile Include="..\Methods\fillString.cpp" />
+    <ClCompile Include="..\Methods\fillVectorOfNumbers.cpp" />
     <ClCompile Include="..\Methods\findMax.cpp" />
+    <ClCompile Include="..\Methods\findMaxLength.cpp" />
+    <ClCompile Include="..\Methods\getDepth.cpp" />
+    <ClCompile Include="..\Methods\getLengthOfIntNumber.cpp" />
     <ClCompile Include="..\Methods\MyNode and MyList.cpp" />
     <ClCompile Include="..\Methods\reverseWay.cpp" />
     <ClCompile Include="..\Methods\symmetricWay.cpp" />
+    <ClCompile Include="..\Methods\verticalPrint.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Structures\MyNode and MyList.h" />

@@ -1,25 +1,26 @@
-/* Система из структур OurTree представляет собой дерево поиска, хранящее в себе значения
-типа int. Среди узлов системы не может быть таких, у которых одинаковое значение */
+/* РЎРёСЃС‚РµРјР° РёР· СЃС‚СЂСѓРєС‚СѓСЂ OurTree РїСЂРµРґСЃС‚Р°РІР»СЏРµС‚ СЃРѕР±РѕР№ РґРµСЂРµРІРѕ РїРѕРёСЃРєР°, С…СЂР°РЅСЏС‰РµРµ РІ СЃРµР±Рµ Р·РЅР°С‡РµРЅРёСЏ
+С‚РёРїР° int. РЎСЂРµРґРё СѓР·Р»РѕРІ СЃРёСЃС‚РµРјС‹ РЅРµ РјРѕР¶РµС‚ Р±С‹С‚СЊ С‚Р°РєРёС…, Сѓ РєРѕС‚РѕСЂС‹С… РѕРґРёРЅР°РєРѕРІРѕРµ Р·РЅР°С‡РµРЅРёРµ */
 #pragma once
 #include <iostream>
 using namespace std;
 
 struct OurTree {
-	// Структура дерева с инициализированными полями
+	// РЎС‚СЂСѓРєС‚СѓСЂР° РґРµСЂРµРІР° СЃ РёРЅРёС†РёР°Р»РёР·РёСЂРѕРІР°РЅРЅС‹РјРё РїРѕР»СЏРјРё
 	OurTree* previous = nullptr;
-	int key = 0; // Идентификатор узла дерева
+	int key = 0; // РРґРµРЅС‚РёС„РёРєР°С‚РѕСЂ СѓР·Р»Р° РґРµСЂРµРІР°
 	OurTree* left = nullptr;
 	OurTree* right = nullptr;
-	// Объявления методов, работающих с деревом
-	void addLeaf(OurTree* current_node, int value); // Создаёт лист для дерева, по алгоритму, согласно которому получается дерево поиска
-	void demolishCollapse(OurTree* current_node); // Удаление части дерева от указанного узла до его листов
-	// Прямой, симметричный обходы и обход в обратном порядке
+	// РћР±СЉСЏРІР»РµРЅРёСЏ РјРµС‚РѕРґРѕРІ, СЂР°Р±РѕС‚Р°СЋС‰РёС… СЃ РґРµСЂРµРІРѕРј
+	void addLeaf(OurTree* current_node, int value); // РЎРѕР·РґР°С‘С‚ Р»РёСЃС‚ РґР»СЏ РґРµСЂРµРІР°, РїРѕ Р°Р»РіРѕСЂРёС‚РјСѓ, СЃРѕРіР»Р°СЃРЅРѕ РєРѕС‚РѕСЂРѕРјСѓ РїРѕР»СѓС‡Р°РµС‚СЃСЏ РґРµСЂРµРІРѕ РїРѕРёСЃРєР°
+	void demolishCollapse(OurTree* current_node); // РЈРґР°Р»РµРЅРёРµ С‡Р°СЃС‚Рё РґРµСЂРµРІР° РѕС‚ СѓРєР°Р·Р°РЅРЅРѕРіРѕ СѓР·Р»Р° РґРѕ РµРіРѕ Р»РёСЃС‚РѕРІ
+	// РџСЂСЏРјРѕР№, СЃРёРјРјРµС‚СЂРёС‡РЅС‹Р№ РѕР±С…РѕРґС‹ Рё РѕР±С…РѕРґ РІ РѕР±СЂР°С‚РЅРѕРј РїРѕСЂСЏРґРєРµ
 	void directWay(OurTree* current_node);
 	void symmetricWay(OurTree* current_node);
 	void reverseWay(OurTree* current_node);
-	// Вспомогательные алгоритмы
-	OurTree* findMin();
+
 	OurTree* findMax();
-	void delLeft();
-	void delRight();
+	int getDepth(OurTree* current_node, int number_of_current_level, int maximal_level);
+	void verticalPrint();
+	int findMaxLength(OurTree* current_node);
+	string fillString(int level, int max_length);
 };

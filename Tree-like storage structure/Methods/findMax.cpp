@@ -1,10 +1,8 @@
 #include "..\Structures\OurTree.h"
 
 OurTree* OurTree::findMax() {
-	if (this->right != nullptr) {
-		while (this->right != nullptr)
-			return right->findMax();
-		return this;
-	}
-	return this;
+	OurTree* current_node = this;
+	while (current_node->right != nullptr)
+		current_node = current_node->right;
+	return current_node;
 }

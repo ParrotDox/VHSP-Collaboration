@@ -36,16 +36,28 @@
     <ClCompile Include="..\Methods\reverseWay.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="..\Methods\findMin.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
     <ClCompile Include="..\Methods\findMax.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="..\Methods\delLeft.cpp">
+    <ClCompile Include="..\Methods\getDepth.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="..\Methods\delRight.cpp">
+    <ClCompile Include="..\Methods\getLengthOfIntNumber.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Methods\convertIntNumberToString.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Methods\verticalPrint.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Methods\fillVectorOfNumbers.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Methods\findMaxLength.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Methods\fillString.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>

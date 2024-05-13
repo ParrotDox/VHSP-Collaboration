@@ -1,14 +1,16 @@
-/* Смысловые обозначения конструкций, использованных в программе:
-структура - каждое слово начинается с заглавной буквы, без пробелов между словами (OurTree)
-функция - первое слово со строчной, другие - с заглавной буквы, без пробелов между словами (addLeaf)
-переменные - первое слово со строчной буквы, присутствует разделение слов нижним подчёркиванием (new_tree) */
+/* РЎРјС‹СЃР»РѕРІС‹Рµ РѕР±РѕР·РЅР°С‡РµРЅРёСЏ РєРѕРЅСЃС‚СЂСѓРєС†РёР№, РёСЃРїРѕР»СЊР·РѕРІР°РЅРЅС‹С… РІ РїСЂРѕРіСЂР°РјРјРµ:
+СЃС‚СЂСѓРєС‚СѓСЂР° - РєР°Р¶РґРѕРµ СЃР»РѕРІРѕ РЅР°С‡РёРЅР°РµС‚СЃСЏ СЃ Р·Р°РіР»Р°РІРЅРѕР№ Р±СѓРєРІС‹, Р±РµР· РїСЂРѕР±РµР»РѕРІ РјРµР¶РґСѓ СЃР»РѕРІР°РјРё (OurTree)
+С„СѓРЅРєС†РёСЏ - РїРµСЂРІРѕРµ СЃР»РѕРІРѕ СЃРѕ СЃС‚СЂРѕС‡РЅРѕР№, РґСЂСѓРіРёРµ - СЃ Р·Р°РіР»Р°РІРЅРѕР№ Р±СѓРєРІС‹, Р±РµР· РїСЂРѕР±РµР»РѕРІ РјРµР¶РґСѓ СЃР»РѕРІР°РјРё (addLeaf)
+РїРµСЂРµРјРµРЅРЅС‹Рµ - РїРµСЂРІРѕРµ СЃР»РѕРІРѕ СЃРѕ СЃС‚СЂРѕС‡РЅРѕР№ Р±СѓРєРІС‹, РїСЂРёСЃСѓС‚СЃС‚РІСѓРµС‚ СЂР°Р·РґРµР»РµРЅРёРµ СЃР»РѕРІ РЅРёР¶РЅРёРј РїРѕРґС‡С‘СЂРєРёРІР°РЅРёРµРј (new_tree) */
 
-/*Стоит также добавить обработку исключений, чтобы нельзя было сломать программу, например,
-записать строковое значение (string) вместо целочисленного (int)*/
+/*РЎС‚РѕРёС‚ С‚Р°РєР¶Рµ РґРѕР±Р°РІРёС‚СЊ РѕР±СЂР°Р±РѕС‚РєСѓ РёСЃРєР»СЋС‡РµРЅРёР№, С‡С‚РѕР±С‹ РЅРµР»СЊР·СЏ Р±С‹Р»Рѕ СЃР»РѕРјР°С‚СЊ РїСЂРѕРіСЂР°РјРјСѓ, РЅР°РїСЂРёРјРµСЂ,
+Р·Р°РїРёСЃР°С‚СЊ СЃС‚СЂРѕРєРѕРІРѕРµ Р·РЅР°С‡РµРЅРёРµ (string) РІРјРµСЃС‚Рѕ С†РµР»РѕС‡РёСЃР»РµРЅРЅРѕРіРѕ (int)*/
 
 #include <iostream>
 #include "Structures\OurTree.h"
 #include "Structures\MyNode and MyList.h"
+#include "Methods\getLengthOfIntNumber.cpp"
+#include "Methods\convertIntNumberToString.cpp"
 using namespace std;
 
 int main() {
@@ -19,83 +21,125 @@ int main() {
 	MyList* list_of_roots = new MyList;
 	MyNode* chosen_node = nullptr;
 	while (true) {
-		cout << "1. Создать новый узел с корнем дерева\n";
-		cout << "2. Информация о выбранном узле\n";
-		cout << "3. Выбрать корень дерева\n";
-		cout << "4. Удалить дерево с корнем\n";
-		cout << "5. Добавить лист для выбранного дерева\n";
-		cout << "6. Завершить работу консольного приложения\n";
-		cout << "Выберите номер (int) опции работы со списком: ";
+		cout << "1. РЎРѕР·РґР°С‚СЊ РЅРѕРІС‹Р№ СѓР·РµР» СЃ РєРѕСЂРЅРµРј РґРµСЂРµРІР°\n";
+		cout << "2. РРЅС„РѕСЂРјР°С†РёСЏ Рѕ РІС‹Р±СЂР°РЅРЅРѕРј СѓР·Р»Рµ\n";
+		cout << "3. Р’С‹Р±СЂР°С‚СЊ РєРѕСЂРµРЅСЊ РґРµСЂРµРІР°\n";
+		cout << "4. РЈРґР°Р»РёС‚СЊ РґРµСЂРµРІРѕ СЃ РєРѕСЂРЅРµРј\n";
+		cout << "5. Р”РѕР±Р°РІРёС‚СЊ Р»РёСЃС‚ РґР»СЏ РІС‹Р±СЂР°РЅРЅРѕРіРѕ РґРµСЂРµРІР°\n";
+		cout << "6. РќР°Р№С‚Рё РІС‹СЃРѕС‚Сѓ РґРµСЂРµРІР°\n";
+		cout << "7. Р’РµСЂС‚РёРєР°Р»СЊРЅР°СЏ РїРµС‡Р°С‚СЊ РґРµСЂРµРІР° (РЅРµС‚)\n";
+		cout << "8. РџСЂСЏРјРѕР№ РѕР±С…РѕРґ\n";
+		cout << "9. РЎРёРјРјРµС‚СЂРёС‡РЅС‹Р№ РѕР±С…РѕРґ\n";
+		cout << "10. РћР±СЂР°С‚РЅС‹Р№ РѕР±С…РѕРґ\n";
+		cout << "11. Р—Р°РІРµСЂС€РёС‚СЊ СЂР°Р±РѕС‚Сѓ РєРѕРЅСЃРѕР»СЊРЅРѕРіРѕ РїСЂРёР»РѕР¶РµРЅРёСЏ\n";
+		cout << "Р’С‹Р±РµСЂРёС‚Рµ РЅРѕРјРµСЂ (int) РѕРїС†РёРё СЂР°Р±РѕС‚С‹ СЃРѕ СЃРїРёСЃРєРѕРј: ";
 		int option_identificator;
 		cin >> option_identificator;
 		system("cls");
 		int number;
 		switch (option_identificator) {
-			case 1:
-				cout << "Введите значение корневого узла дерева (int): ";
-				cin >> number;
-				list_of_roots->addNode(number);
-				break;
-			case 2:
-				if (chosen_node == nullptr)
-					cout << "Узел с корнем дерева не выбран\n";
-				else
-					cout << "Выбран узел списка по адресу " << chosen_node << " со значением корня дерева " << chosen_node->root_of_tree->key << endl;
-				break;
-			case 3:
-				if (list_of_roots->head == nullptr)
-					cout << "Список пуст. Нельзя выбрать узел\n";
-				else {
-					do {
-						list_of_roots->showInfo();
-						cout << "Введите порядок узла в списке (int): ";
-						cin >> number;
-						if (number <= 0 || number > list_of_roots->quantity_of_nodes) {
-							cout << "Узла под этим номером не существует в списке\n";
-							system("pause");
-						}
-						system("cls");
-					} while (number <= 0 || number > list_of_roots->quantity_of_nodes);
-					chosen_node = list_of_roots->getNodeByPosition(number);
-					cout << "Корень дерева успешно выбран и содержится в узле под номером " << number << endl;
-				}
-				break;
-			case 4:
-				if (list_of_roots->head == nullptr)
-					cout << "Список пуст. Нельзя удалить узел\n";
-				else {
-					do {
-						list_of_roots->showInfo();
-						cout << "Введите порядок узла в списке (int): ";
-						cin >> number;
-						if (number <= 0 || number > list_of_roots->quantity_of_nodes) {
-							cout << "Узла под этим номером не существует в списке\n";
-							system("pause");
-						}
-						system("cls");
-					} while (number <= 0 || number > list_of_roots->quantity_of_nodes);
-					if (chosen_node == list_of_roots->getNodeByPosition(number)) {
-						cout << "Был выбран корень дерева, с узлом которого работают методы работы дерева поиска\n";
-						cout << "Теперь нет выбранного узла для работы с деревом\n";
-						chosen_node = nullptr;
-					}
-					list_of_roots->deleteNodeByPosition(number);
-					cout << "Успешно удалён узел списка под номером " << number << endl;
-				}
-				break;
-			case 5:
-				if (chosen_node == nullptr)
-					cout << "Нет выбранного дерева\n";
-				else {
-					cout << "Введите такой ключ для узла дерева, значения которого нет в нём: ";
+		case 1:
+			cout << "Р’РІРµРґРёС‚Рµ Р·РЅР°С‡РµРЅРёРµ РєРѕСЂРЅРµРІРѕРіРѕ СѓР·Р»Р° РґРµСЂРµРІР° (int): ";
+			cin >> number;
+			list_of_roots->addNode(number);
+			break;
+		case 2:
+			if (chosen_node == nullptr)
+				cout << "РЈР·РµР» СЃ РєРѕСЂРЅРµРј РґРµСЂРµРІР° РЅРµ РІС‹Р±СЂР°РЅ\n";
+			else
+				cout << "Р’С‹Р±СЂР°РЅ СѓР·РµР» СЃРїРёСЃРєР° РїРѕ Р°РґСЂРµСЃСѓ " << chosen_node << " СЃРѕ Р·РЅР°С‡РµРЅРёРµРј РєРѕСЂРЅСЏ РґРµСЂРµРІР° " << chosen_node->root_of_tree->key << endl;
+			break;
+		case 3:
+			if (list_of_roots->head == nullptr)
+				cout << "РЎРїРёСЃРѕРє РїСѓСЃС‚. РќРµР»СЊР·СЏ РІС‹Р±СЂР°С‚СЊ СѓР·РµР»\n";
+			else {
+				do {
+					list_of_roots->showInfo();
+					cout << "Р’РІРµРґРёС‚Рµ РїРѕСЂСЏРґРѕРє СѓР·Р»Р° РІ СЃРїРёСЃРєРµ (int): ";
 					cin >> number;
-					chosen_node->root_of_tree->addLeaf(chosen_node->root_of_tree, number);
+					if (number <= 0 || number > list_of_roots->quantity_of_nodes) {
+						cout << "РЈР·Р»Р° РїРѕРґ СЌС‚РёРј РЅРѕРјРµСЂРѕРј РЅРµ СЃСѓС‰РµСЃС‚РІСѓРµС‚ РІ СЃРїРёСЃРєРµ\n";
+						system("pause");
+					}
+					system("cls");
+				} while (number <= 0 || number > list_of_roots->quantity_of_nodes);
+				chosen_node = list_of_roots->getNodeByPosition(number);
+				cout << "РљРѕСЂРµРЅСЊ РґРµСЂРµРІР° СѓСЃРїРµС€РЅРѕ РІС‹Р±СЂР°РЅ Рё СЃРѕРґРµСЂР¶РёС‚СЃСЏ РІ СѓР·Р»Рµ РїРѕРґ РЅРѕРјРµСЂРѕРј " << number << endl;
+			}
+			break;
+		case 4:
+			if (list_of_roots->head == nullptr)
+				cout << "РЎРїРёСЃРѕРє РїСѓСЃС‚. РќРµР»СЊР·СЏ СѓРґР°Р»РёС‚СЊ СѓР·РµР»\n";
+			else {
+				do {
+					list_of_roots->showInfo();
+					cout << "Р’РІРµРґРёС‚Рµ РїРѕСЂСЏРґРѕРє СѓР·Р»Р° РІ СЃРїРёСЃРєРµ (int): ";
+					cin >> number;
+					if (number <= 0 || number > list_of_roots->quantity_of_nodes) {
+						cout << "РЈР·Р»Р° РїРѕРґ СЌС‚РёРј РЅРѕРјРµСЂРѕРј РЅРµ СЃСѓС‰РµСЃС‚РІСѓРµС‚ РІ СЃРїРёСЃРєРµ\n";
+						system("pause");
+					}
+					system("cls");
+				} while (number <= 0 || number > list_of_roots->quantity_of_nodes);
+				if (chosen_node == list_of_roots->getNodeByPosition(number)) {
+					cout << "Р‘С‹Р» РІС‹Р±СЂР°РЅ РєРѕСЂРµРЅСЊ РґРµСЂРµРІР°, СЃ СѓР·Р»РѕРј РєРѕС‚РѕСЂРѕРіРѕ СЂР°Р±РѕС‚Р°СЋС‚ РјРµС‚РѕРґС‹ СЂР°Р±РѕС‚С‹ РґРµСЂРµРІР° РїРѕРёСЃРєР°\n";
+					cout << "РўРµРїРµСЂСЊ РЅРµС‚ РІС‹Р±СЂР°РЅРЅРѕРіРѕ СѓР·Р»Р° РґР»СЏ СЂР°Р±РѕС‚С‹ СЃ РґРµСЂРµРІРѕРј\n";
+					chosen_node = nullptr;
 				}
-				break;
-			case 6:
-				return 0;
-			default:
-				cout << "Опции работы с программой под этим номером не существует\n";
+				list_of_roots->deleteNodeByPosition(number);
+				cout << "РЈСЃРїРµС€РЅРѕ СѓРґР°Р»С‘РЅ СѓР·РµР» СЃРїРёСЃРєР° РїРѕРґ РЅРѕРјРµСЂРѕРј " << number << endl;
+			}
+			break;
+		case 5:
+			if (chosen_node == nullptr)
+				cout << "РќРµС‚ РІС‹Р±СЂР°РЅРЅРѕРіРѕ РґРµСЂРµРІР°\n";
+			else {
+				cout << "Р’РІРµРґРёС‚Рµ С‚Р°РєРѕР№ РєР»СЋС‡ РґР»СЏ СѓР·Р»Р° РґРµСЂРµРІР°, Р·РЅР°С‡РµРЅРёСЏ РєРѕС‚РѕСЂРѕРіРѕ РЅРµС‚ РІ РЅС‘Рј: ";
+				cin >> number;
+				chosen_node->root_of_tree->addLeaf(chosen_node->root_of_tree, number);
+			}
+			break;
+		case 6:
+			if (chosen_node == nullptr)
+				cout << "РќРµС‚ РІС‹Р±СЂР°РЅРЅРѕРіРѕ РґРµСЂРµРІР°\n";
+			else
+				cout << "Р’С‹СЃРѕС‚Р° СЌС‚РѕРіРѕ РґРµСЂРµРІР° СЂР°РІРЅР° " << chosen_node->root_of_tree->getDepth(chosen_node->root_of_tree, 1, 1) << endl;
+			break;
+		case 7:
+			if (chosen_node == nullptr)
+				cout << "РќРµС‚ РІС‹Р±СЂР°РЅРЅРѕРіРѕ РґРµСЂРµРІР°\n";
+			else {
+				cout << "Fine! I suppose this how you wish to die.\n";
+			}
+			break;
+		case 8:
+			if (chosen_node == nullptr)
+				cout << "РќРµС‚ РІС‹Р±СЂР°РЅРЅРѕРіРѕ РґРµСЂРµРІР°\n";
+			else {
+				cout << "РџСЂСЏРјРѕР№ РѕР±С…РѕРґ РґРµСЂРµРІР°:\n";
+				chosen_node->root_of_tree->directWay(chosen_node->root_of_tree);
+			}
+			break;
+		case 9:
+			if (chosen_node == nullptr)
+				cout << "РќРµС‚ РІС‹Р±СЂР°РЅРЅРѕРіРѕ РґРµСЂРµРІР°\n";
+			else {
+				cout << "РЎРёРјРјРµС‚СЂРёС‡РЅС‹Р№ РѕР±С…РѕРґ РґРµСЂРµРІР°:\n";
+				chosen_node->root_of_tree->symmetricWay(chosen_node->root_of_tree);
+			}
+			break;
+		case 10:
+			if (chosen_node == nullptr)
+				cout << "РќРµС‚ РІС‹Р±СЂР°РЅРЅРѕРіРѕ РґРµСЂРµРІР°\n";
+			else {
+				cout << "РћР±СЂР°С‚РЅС‹Р№ РѕР±С…РѕРґ РґРµСЂРµРІР°:\n";
+				chosen_node->root_of_tree->reverseWay(chosen_node->root_of_tree);
+			}
+			break;
+		case 11:
+			return 0;
+		default:
+			cout << "РћРїС†РёРё СЂР°Р±РѕС‚С‹ СЃ РїСЂРѕРіСЂР°РјРјРѕР№ РїРѕРґ СЌС‚РёРј РЅРѕРјРµСЂРѕРј РЅРµ СЃСѓС‰РµСЃС‚РІСѓРµС‚\n";
 		}
 		system("pause");
 		system("cls");

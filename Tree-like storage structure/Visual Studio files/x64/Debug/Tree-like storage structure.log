@@ -1,13 +1,46 @@
 ﻿  Main.cpp
+C:\Разное\Учёба\VHSP-Collaboration\Tree-like storage structure\Methods\convertIntNumberToString.cpp(50,13): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+  (компиляция исходного файла "../Main.cpp")
+  
   addLeaf.cpp
-  delLeft.cpp
-  delRight.cpp
+  convertIntNumberToString.cpp
+C:\Разное\Учёба\VHSP-Collaboration\Tree-like storage structure\Methods\convertIntNumberToString.cpp(50,13): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
   demolishCollapse.cpp
   directWay.cpp
-  findMin.cpp
+  fillString.cpp
+C:\Разное\Учёба\VHSP-Collaboration\Tree-like storage structure\Methods\convertIntNumberToString.cpp(50,13): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+  (компиляция исходного файла "../Methods/fillString.cpp")
+  
+C:\Разное\Учёба\VHSP-Collaboration\Tree-like storage structure\Methods\fillString.cpp(9,22): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
+  fillVectorOfNumbers.cpp
+C:\Разное\Учёба\VHSP-Collaboration\Tree-like storage structure\Methods\fillString.cpp(16,17): error C2563: несоответствие в списке формальных параметров
+C:\Разное\Учёба\VHSP-Collaboration\Tree-like storage structure\Methods\fillString.cpp(16,17): error C2568: <: не удается разрешить перегрузку функции
+  C:\Разное\Учёба\VHSP-Collaboration\Tree-like storage structure\Methods\fillString.cpp(16,17):
+  может быть "size_t std::size(const _Ty (&)[_Size]) noexcept"
+  C:\Разное\Учёба\VHSP-Collaboration\Tree-like storage structure\Methods\fillString.cpp(16,17):
+  или       "unknown-type std::size(const _Container &) noexcept(<expr>)"
+  
+C:\Разное\Учёба\VHSP-Collaboration\Tree-like storage structure\Methods\fillString.cpp(18,31): error C2065: tree: необъявленный идентификатор
+C:\Разное\Учёба\VHSP-Collaboration\Tree-like storage structure\Methods\fillString.cpp(30,31): error C2660: convertIntNumberToString: функция не принимает 2 аргументов
+  C:\Разное\Учёба\VHSP-Collaboration\Tree-like storage structure\Methods\convertIntNumberToString.cpp(5,8):
+   см. объявление "convertIntNumberToString"
+  C:\Разное\Учёба\VHSP-Collaboration\Tree-like storage structure\Methods\fillString.cpp(30,31):
+  при попытке сопоставить список аргументов "(_Ty, int)"
+          with
+          [
+              _Ty=int
+          ]
+  
   findMax.cpp
+  findMaxLength.cpp
+  getDepth.cpp
+  getLengthOfIntNumber.cpp
   MyNode and MyList.cpp
   reverseWay.cpp
   symmetricWay.cpp
+  verticalPrint.cpp
+C:\Разное\Учёба\VHSP-Collaboration\Tree-like storage structure\Methods\convertIntNumberToString.cpp(50,13): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+  (компиляция исходного файла "../Methods/verticalPrint.cpp")
+  
+C:\Разное\Учёба\VHSP-Collaboration\Tree-like storage structure\Methods\verticalPrint.cpp(10,22): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
   Создание кода...
-  Tree-like storage structure.vcxproj -> C:\Разное\Учёба\VHSP-Collaboration\Tree-like storage structure\Visual Studio files\x64\Debug\Tree-like storage structure.exe
