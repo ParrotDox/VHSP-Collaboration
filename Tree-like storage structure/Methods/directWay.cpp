@@ -10,5 +10,4 @@ void OurTree::directWay(OurTree* current_node) {
 		directWay(current_node->left);
 		directWay(current_node->right);
 	}
-	cout << endl;
 }

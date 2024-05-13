@@ -17,10 +17,6 @@ struct OurTree {
 	void directWay(OurTree* current_node);
 	void symmetricWay(OurTree* current_node);
 	void reverseWay(OurTree* current_node);
-
 	OurTree* findMax();
 	int getDepth(OurTree* current_node, int number_of_current_level, int maximal_level);
-	void verticalPrint();
-	int findMaxLength(OurTree* current_node);
-	string fillString(int level, int max_length);
 };

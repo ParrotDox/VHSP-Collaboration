@@ -9,13 +9,11 @@
 #include <iostream>
 #include "Structures\OurTree.h"
 #include "Structures\MyNode and MyList.h"
-#include "Methods\getLengthOfIntNumber.cpp"
-#include "Methods\convertIntNumberToString.cpp"
 using namespace std;
 
 int main() {
 	system("title Tree-like storage structure");
-	system("chcp 1251");
+	system("chcp 65001");
 	system("color f0");
 	system("cls");
 	MyList* list_of_roots = new MyList;
@@ -27,11 +25,10 @@ int main() {
 		cout << "4. Удалить дерево с корнем\n";
 		cout << "5. Добавить лист для выбранного дерева\n";
 		cout << "6. Найти высоту дерева\n";
-		cout << "7. Вертикальная печать дерева (нет)\n";
-		cout << "8. Прямой обход\n";
-		cout << "9. Симметричный обход\n";
-		cout << "10. Обратный обход\n";
-		cout << "11. Завершить работу консольного приложения\n";
+		cout << "7. Прямой обход\n";
+		cout << "8. Симметричный обход\n";
+		cout << "9. Обратный обход\n";
+		cout << "10. Завершить работу консольного приложения\n";
 		cout << "Выберите номер (int) опции работы со списком: ";
 		int option_identificator;
 		cin >> option_identificator;
@@ -109,34 +106,30 @@ int main() {
 			if (chosen_node == nullptr)
 				cout << "Нет выбранного дерева\n";
 			else {
-				cout << "Fine! I suppose this how you wish to die.\n";
+				cout << "Прямой обход дерева:\n";
+				chosen_node->root_of_tree->directWay(chosen_node->root_of_tree);
+				cout << endl;
 			}
 			break;
 		case 8:
 			if (chosen_node == nullptr)
 				cout << "Нет выбранного дерева\n";
 			else {
-				cout << "Прямой обход дерева:\n";
-				chosen_node->root_of_tree->directWay(chosen_node->root_of_tree);
+				cout << "Симметричный обход дерева:\n";
+				chosen_node->root_of_tree->symmetricWay(chosen_node->root_of_tree);
+				cout << endl;
 			}
 			break;
 		case 9:
 			if (chosen_node == nullptr)
 				cout << "Нет выбранного дерева\n";
 			else {
-				cout << "Симметричный обход дерева:\n";
-				chosen_node->root_of_tree->symmetricWay(chosen_node->root_of_tree);
+				cout << "Обратный обход дерева:\n";
+				chosen_node->root_of_tree->reverseWay(chosen_node->root_of_tree);
+				cout << endl;
 			}
 			break;
 		case 10:
-			if (chosen_node == nullptr)
-				cout << "Нет выбранного дерева\n";
-			else {
-				cout << "Обратный обход дерева:\n";
-				chosen_node->root_of_tree->reverseWay(chosen_node->root_of_tree);
-			}
-			break;
-		case 11:
 			return 0;
 		default:
 			cout << "Опции работы с программой под этим номером не существует\n";
