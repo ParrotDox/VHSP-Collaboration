@@ -2,6 +2,7 @@
 типа int. Среди узлов системы не может быть таких, у которых одинаковое значение */
 #pragma once
 #include <iostream>
+#include <vector>
 using namespace std;
 
 struct OurTree {
@@ -15,8 +16,10 @@ struct OurTree {
 	void demolishCollapse(OurTree* current_node); // Удаление части дерева от указанного узла до его листов
 	// Прямой, симметричный обходы и обход в обратном порядке
 	void directWay(OurTree* current_node);
+	void directWay(OurTree* current_node, vector<vector<int>>& matrix, int depth);	//Перегруженный метод прямого обхода для заполнения матрицы
 	void symmetricWay(OurTree* current_node);
 	void reverseWay(OurTree* current_node);
 	OurTree* findMax();
 	int getDepth(OurTree* current_node, int number_of_current_level, int maximal_level);
+	vector<vector<int>>* createMatrix(OurTree* current_root);
 };
