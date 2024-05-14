@@ -12,11 +12,19 @@ void OurTree::directWay(OurTree* current_node) {
 	}
 }
 void OurTree::directWay(OurTree* current_node, vector<vector<int>>& matrix,int level) {
+	int cur_index = 0;
 	if (current_node == nullptr)
+	{
+		while (matrix[level][cur_index] != -1)	//-1 означает, что ячейка пустая. Ее можно заполнить
+		{
+			++cur_index;
+		}
+		matrix[level][cur_index] = -2;	//-2 в матрице означает, что указатель на ячейку имеет значение nullptr. -2 нужен для отступа
 		return;
-	else {
-		int cur_index = 0;
-		while(matrix[level][cur_index] != 0)
+	}
+	else
+	{
+		while(matrix[level][cur_index] != -1)	//-1 означает, что ячейка пустая. Ее можно заполнить
 		{
 			++cur_index;
 		}
