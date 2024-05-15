@@ -1,11 +1,20 @@
 C:\Разное\Учёба\VHSP-Collaboration\Tree-like storage structure\Main.cpp;C:\Разное\Учёба\VHSP-Collaboration\Tree-like storage structure\Visual Studio files\x64\Debug\Main.obj
 C:\Разное\Учёба\VHSP-Collaboration\Tree-like storage structure\Methods\addLeaf.cpp;C:\Разное\Учёба\VHSP-Collaboration\Tree-like storage structure\Visual Studio files\x64\Debug\addLeaf.obj
-C:\Разное\Учёба\VHSP-Collaboration\Tree-like storage structure\Methods\convertIntNumberToString.cpp;C:\Разное\Учёба\VHSP-Collaboration\Tree-like storage structure\Visual Studio files\x64\Debug\convertIntNumberToString.obj
+C:\Разное\Учёба\VHSP-Collaboration\Tree-like storage structure\Methods\convertNumberToString.cpp;C:\Разное\Учёба\VHSP-Collaboration\Tree-like storage structure\Visual Studio files\x64\Debug\convertNumberToString.obj
+C:\Разное\Учёба\VHSP-Collaboration\Tree-like storage structure\Methods\destroyMatrix.cpp;C:\Разное\Учёба\VHSP-Collaboration\Tree-like storage structure\Visual Studio files\x64\Debug\destroyMatrix.obj
 C:\Разное\Учёба\VHSP-Collaboration\Tree-like storage structure\Methods\demolishCollapse.cpp;C:\Разное\Учёба\VHSP-Collaboration\Tree-like storage structure\Visual Studio files\x64\Debug\demolishCollapse.obj
 C:\Разное\Учёба\VHSP-Collaboration\Tree-like storage structure\Methods\directWay.cpp;C:\Разное\Учёба\VHSP-Collaboration\Tree-like storage structure\Visual Studio files\x64\Debug\directWay.obj
+C:\Разное\Учёба\VHSP-Collaboration\Tree-like storage structure\Methods\exponentiationOfNumberTwo.cpp;C:\Разное\Учёба\VHSP-Collaboration\Tree-like storage structure\Visual Studio files\x64\Debug\exponentiationOfNumberTwo.obj
+C:\Разное\Учёба\VHSP-Collaboration\Tree-like storage structure\Methods\fillMatrix.cpp;C:\Разное\Учёба\VHSP-Collaboration\Tree-like storage structure\Visual Studio files\x64\Debug\fillMatrix.obj
+C:\Разное\Учёба\VHSP-Collaboration\Tree-like storage structure\Methods\findFreeIndexInLevel.cpp;C:\Разное\Учёба\VHSP-Collaboration\Tree-like storage structure\Visual Studio files\x64\Debug\findFreeIndexInLevel.obj
 C:\Разное\Учёба\VHSP-Collaboration\Tree-like storage structure\Methods\findMax.cpp;C:\Разное\Учёба\VHSP-Collaboration\Tree-like storage structure\Visual Studio files\x64\Debug\findMax.obj
+C:\Разное\Учёба\VHSP-Collaboration\Tree-like storage structure\Methods\findNodeWithMaximalKey.cpp;C:\Разное\Учёба\VHSP-Collaboration\Tree-like storage structure\Visual Studio files\x64\Debug\findNodeWithMaximalKey.obj
 C:\Разное\Учёба\VHSP-Collaboration\Tree-like storage structure\Methods\getDepth.cpp;C:\Разное\Учёба\VHSP-Collaboration\Tree-like storage structure\Visual Studio files\x64\Debug\getDepth.obj
-C:\Разное\Учёба\VHSP-Collaboration\Tree-like storage structure\Methods\getLengthOfIntNumber.cpp;C:\Разное\Учёба\VHSP-Collaboration\Tree-like storage structure\Visual Studio files\x64\Debug\getLengthOfIntNumber.obj
+C:\Разное\Учёба\VHSP-Collaboration\Tree-like storage structure\Methods\getLengthOfNumber.cpp;C:\Разное\Учёба\VHSP-Collaboration\Tree-like storage structure\Visual Studio files\x64\Debug\getLengthOfNumber.obj
+C:\Разное\Учёба\VHSP-Collaboration\Tree-like storage structure\Methods\getSomeSpace.cpp;C:\Разное\Учёба\VHSP-Collaboration\Tree-like storage structure\Visual Studio files\x64\Debug\getSomeSpace.obj
 C:\Разное\Учёба\VHSP-Collaboration\Tree-like storage structure\Methods\MyNode and MyList.cpp;C:\Разное\Учёба\VHSP-Collaboration\Tree-like storage structure\Visual Studio files\x64\Debug\MyNode and MyList.obj
+C:\Разное\Учёба\VHSP-Collaboration\Tree-like storage structure\Methods\placeNumberInCell.cpp;C:\Разное\Учёба\VHSP-Collaboration\Tree-like storage structure\Visual Studio files\x64\Debug\placeNumberInCell.obj
+C:\Разное\Учёба\VHSP-Collaboration\Tree-like storage structure\Methods\printMatrix.cpp;C:\Разное\Учёба\VHSP-Collaboration\Tree-like storage structure\Visual Studio files\x64\Debug\printMatrix.obj
 C:\Разное\Учёба\VHSP-Collaboration\Tree-like storage structure\Methods\reverseWay.cpp;C:\Разное\Учёба\VHSP-Collaboration\Tree-like storage structure\Visual Studio files\x64\Debug\reverseWay.obj
 C:\Разное\Учёба\VHSP-Collaboration\Tree-like storage structure\Methods\symmetricWay.cpp;C:\Разное\Учёба\VHSP-Collaboration\Tree-like storage structure\Visual Studio files\x64\Debug\symmetricWay.obj
+C:\Разное\Учёба\VHSP-Collaboration\Tree-like storage structure\Methods\verticalPrint.cpp;C:\Разное\Учёба\VHSP-Collaboration\Tree-like storage structure\Visual Studio files\x64\Debug\verticalPrint.obj

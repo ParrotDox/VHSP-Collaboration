@@ -31,4 +31,6 @@ struct OurTree {
 	string convertNumberToString(int number);
 	int exponentiationOfNumberTwo(int degree);
 	string getSomeSpace(int amount);
+	string createEmptyCell(int min_length_cell, int cd, int d);
+	string createKeepCell(int min_length_cell, unsigned long long number, int cd, int d);
 };

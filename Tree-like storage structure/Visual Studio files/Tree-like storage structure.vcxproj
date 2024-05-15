@@ -129,8 +129,9 @@
   <ItemGroup>
     <ClCompile Include="..\Main.cpp" />
     <ClCompile Include="..\Methods\addLeaf.cpp" />
-    <ClCompile Include="..\Methods\convertIntNumberToString.cpp" />
     <ClCompile Include="..\Methods\convertNumberToString.cpp" />
+    <ClCompile Include="..\Methods\createEmptyCell.cpp" />
+    <ClCompile Include="..\Methods\createKeepCell.cpp" />
     <ClCompile Include="..\Methods\destroyMatrix.cpp" />
     <ClCompile Include="..\Methods\demolishCollapse.cpp" />
     <ClCompile Include="..\Methods\directWay.cpp" />
@@ -140,7 +141,6 @@
     <ClCompile Include="..\Methods\findMax.cpp" />
     <ClCompile Include="..\Methods\findNodeWithMaximalKey.cpp" />
     <ClCompile Include="..\Methods\getDepth.cpp" />
-    <ClCompile Include="..\Methods\getLengthOfIntNumber.cpp" />
     <ClCompile Include="..\Methods\getLengthOfNumber.cpp" />
     <ClCompile Include="..\Methods\getSomeSpace.cpp" />
     <ClCompile Include="..\Methods\MyNode and MyList.cpp" />

@@ -1,8 +1,10 @@
 #include "..\Structures\OurTree.h"
+#include <math.h>
+#include "..\Structures\OurTree.h"
 void OurTree::verticalPrint(OurTree* root_of_tree) {
 	// Создание матрицы и внесение в неё значений узлов дерева
 	const int height = getDepth(root_of_tree, 1, 1); // Глубина дерева
-	const int width = exponentiationOfNumberTwo(height - 1); // Количество листьев в дереве
+	const int width = exponentiationOfNumberTwo(height - 1); // Количество ячеек на последней строке вывода
 	int** matrix = new int* [height];
 	for (int i = 0; i < height; ++i) {
 		int* level = new int[width];
@@ -18,21 +20,29 @@ void OurTree::verticalPrint(OurTree* root_of_tree) {
 	cout << "Матрица со значениями узлов дерева:\n";
 	printMatrix(matrix, height, width);
 	cout << endl;
-	int length_of_cell = getLenghtOfNumber(findNodeWithMaximalKey(root_of_tree)->key) + 1;
-	int length_of_line = length_of_cell * width;
-	int current_amount_of_cells;
-	int reverse_depth = width;
-	for (int i = 0; i < height; ++i) {
-		current_amount_of_cells = exponentiationOfNumberTwo(i);
-		string line = "";
-		for (int j = 0; j < current_amount_of_cells; ++j) {
-			if (matrix[i][j] < 0)
-				line += getSomeSpace(length_of_cell * exponentiationOfNumberTwo(reverse_depth - 1));
+	int length_of_cell = getLenghtOfNumber(findNodeWithMaximalKey(root_of_tree)->key) + 1; // Найти длину для ячейки последнего уровня
+	string temp;
+	int depth = height;
+	int min_length_cell = length_of_cell;
+	for (int current_level = 1; current_level <= depth; ++current_level)
+	{
+		for (int element_index = 0; element_index < pow(2, current_level - 1); ++element_index)
+		{
+			if (matrix[current_level - 1][element_index] < 0)
+			{
+				temp = createEmptyCell(min_length_cell, current_level, depth);
+			}
 			else
-				line += placeNumberInCell(matrix[i][j], length_of_cell * exponentiationOfNumberTwo(reverse_depth - 1));
+			{
+				int number = matrix[current_level - 1][element_index];
+				temp = createKeepCell(min_length_cell, number, current_level, depth);
+			}
+			cout << temp;
 		}
-		--reverse_depth;
-		cout << line << endl;
+		cout << endl;
 	}
+
+
+
 	destroyMatrix(matrix, height);
 }
