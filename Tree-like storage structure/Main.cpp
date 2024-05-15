@@ -28,7 +28,8 @@ int main() {
 		cout << "7. Прямой обход\n";
 		cout << "8. Симметричный обход\n";
 		cout << "9. Обратный обход\n";
-		cout << "10. Завершить работу консольного приложения\n";
+		cout << "10. Вертикальная печать\n";
+		cout << "11. Завершить работу консольного приложения\n";
 		cout << "Выберите номер (int) опции работы со списком: ";
 		int option_identificator;
 		cin >> option_identificator;
@@ -130,6 +131,12 @@ int main() {
 			}
 			break;
 		case 10:
+			if (chosen_node == nullptr)
+				cout << "Нет выбранного дерева\n";
+			else
+				chosen_node->root_of_tree->verticalPrint(chosen_node->root_of_tree);
+			break;
+		case 11:
 			return 0;
 		default:
 			cout << "Опции работы с программой под этим номером не существует\n";

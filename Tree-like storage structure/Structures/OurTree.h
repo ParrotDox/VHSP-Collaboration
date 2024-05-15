@@ -2,13 +2,13 @@
 типа int. Среди узлов системы не может быть таких, у которых одинаковое значение */
 #pragma once
 #include <iostream>
-#include <vector>
+#include <string>
 using namespace std;
 
 struct OurTree {
 	// Структура дерева с инициализированными полями
 	OurTree* previous = nullptr;
-	int key = 0; // Идентификатор узла дерева
+	unsigned long long int key = 0; // Идентификатор узла дерева
 	OurTree* left = nullptr;
 	OurTree* right = nullptr;
 	// Объявления методов, работающих с деревом
@@ -16,10 +16,19 @@ struct OurTree {
 	void demolishCollapse(OurTree* current_node); // Удаление части дерева от указанного узла до его листов
 	// Прямой, симметричный обходы и обход в обратном порядке
 	void directWay(OurTree* current_node);
-	void directWay(OurTree* current_node, vector<vector<int>>& matrix, int depth);	//Перегруженный метод прямого обхода для заполнения матрицы
 	void symmetricWay(OurTree* current_node);
 	void reverseWay(OurTree* current_node);
 	OurTree* findMax();
 	int getDepth(OurTree* current_node, int number_of_current_level, int maximal_level);
-	vector<vector<int>>* createMatrix(OurTree* current_root);
+	void verticalPrint(OurTree* root_of_tree);
+	int findFreeIndexInLevel(int* level);
+	int getLenghtOfNumber(unsigned long long number);
+	OurTree* findNodeWithMaximalKey(OurTree* current_node);
+	string placeNumberInCell(unsigned long long number, int lenght_of_cell);
+	void printMatrix(int** matrix, int height, int width);
+	void fillMatrix(int** matrix, OurTree* current_node, int depth_limit, int current_depth);
+	void destroyMatrix(int** matrix, int height);
+	string convertNumberToString(int number);
+	int exponentiationOfNumberTwo(int degree);
+	string getSomeSpace(int amount);
 };
